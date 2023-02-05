@@ -655,6 +655,25 @@ animation-delay: .8s;
   background: #232a34;
 }
 
+/*** 
+
+====================================================================
+  Gallery section
+====================================================================
+
+ ***/
+ #gallery-section {
+  background: #232a34;
+}
+
+#gallery-section .gallery-container{
+  background: #232a34;
+}
+
+#gallery-section .theme-title h2{
+  color:#fff !important; 
+}
+
 
 /*** 
 
