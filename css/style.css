@@ -48,10 +48,6 @@
 @import url('../vendor/revolution/settings.css');
 @import url('../vendor/revolution/layers.css');
 @import url('../vendor/revolution/navigation.css');
-/*-------- animated css ------*/
-@import url('../vendor/WOW-master/css/libs/animate.css');
-/*---- Progress bar css----*/
-@import url('../vendor/skills-master/source/habilidades.css');
 /*-------- hover css ------*/
 @import url('../vendor/hover.css');
 
@@ -439,7 +435,8 @@ animation-delay: .8s;
   font-size: 36px;
   color:#292929;
 }
-#about-us h5 a {
+#about-us .team-name {
+  font-size: 22px;
   color:#292929;
   margin: 35px 0 20px 0;
 }
@@ -1136,7 +1133,8 @@ footer p {
   font-size: 16px;
 }
 
-.button:hover {background-color: #c0c0c0}
+.button:hover,
+.button:focus {background-color: #c0c0c0; color: rgb(95, 95, 95);}
 
 .button:active {
   background-color: #c0c0c0;
