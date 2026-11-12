@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //your current click function
+    // Smooth scroll for in-page links outside the menu (the class cards in the classes section)
     $(".scroll-same-page").on('click', function (event) {
 
         // Make sure this.hash has a value before overriding default behavior

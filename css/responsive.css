@@ -53,7 +53,7 @@
          -o-transition: none;
             transition: none;
   }
-  #service-section .row [class*="col-"],
+  #classes-section .row [class*="col-"],
   #contact-section .contact-address-content [class*="col-"],
   .theme-main-header .container {padding-left: 0;padding-right: 0;}
 }
