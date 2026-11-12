@@ -1,1 +1,1 @@
-# escenic-arts.com
+# Escenic Arts
