@@ -1,20 +1,21 @@
-function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-  
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+// Class schedule tabs (Danzas, Teatro Musical, Teatro).
+// Called from the onclick of each .tab-button with the id of the .tab-panel it opens.
+function openClassTab(event, tabId) {
+    var i, tabPanels, tabButtons;
+
+    // Hide every tab panel
+    tabPanels = document.getElementsByClassName("tab-panel");
+    for (i = 0; i < tabPanels.length; i++) {
+      tabPanels[i].style.display = "none";
     }
-  
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+    // Remove the "active" class from every tab button
+    tabButtons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].className = tabButtons[i].className.replace(" active", "");
     }
-  
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-  } 
+
+    // Show the selected panel and mark the clicked button as active
+    document.getElementById(tabId).style.display = "block";
+    event.currentTarget.className += " active";
+  }

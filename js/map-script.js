@@ -1,9 +1,10 @@
 "use strict";
 
 
-function goMap () {
+// Google Maps callback (see the callback= parameter of the Maps script in index.html)
+function initMap () {
   if ($('#map').length) {
-        // Styles a map in night mode.
+        // Dark-styled map centered on the studio
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.493337, lng: -58.551993},
           zoom: 16,
@@ -176,22 +177,22 @@ function goMap () {
           ]
         });
 
-		// To add the marker to the map 
-		  var image = 'images/logo/map.png';
+		// Studio marker with an info window that links to Google Maps
+		  var markerIcon = 'images/logo/map.png';
 		  var infowindow = new google.maps.InfoWindow({
 			content: '<a href="https://www.google.com/maps/place/Escuela+Modelo+de+Futbol+y+Deportes+Claudio+Marangoni/@-34.4931583,-58.5529491,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcb07659351171:0x95e33a56620dba88!8m2!3d-34.4931583!4d-58.5507604" target="_blank"><h6>Escenic&Arts</h6><p>Club Claudio Marangoni</p></a>'
 		  });
   
-		  var beachMarker = new google.maps.Marker({
+		  var marker = new google.maps.Marker({
 		    position: {lat: -34.493337, lng: -58.551993},
 		    map: map,
-		    icon: image,
+		    icon: markerIcon,
 			title:"Escenic&Arts"
 		  });
 
-		  beachMarker.addListener('click', function() {
-			infowindow.open(map, beachMarker);
+		  marker.addListener('click', function() {
+			infowindow.open(map, marker);
 		  })
-		  infowindow.open(map, beachMarker);
+		  infowindow.open(map, marker);
   };
 };

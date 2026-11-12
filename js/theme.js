@@ -2,21 +2,21 @@
 "use strict";
 
 
-// Prealoder
- function prealoader () {
-   if ($('#preloader_1').length) {
-     $('#preloader_1').fadeOut(); // will first fade out the loading animation
-     $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+// Fade out the preloader once the page has loaded
+ function hidePreloader () {
+   if ($('#preloader').length) {
+     $('#preloader').fadeOut(); // fade out the loading animation first
+     $('#loader-wrapper').delay(350).fadeOut('slow'); // then the white overlay that covers the page
      $('body').delay(350).css({'overflow':'visible'});
   };
  }
 
 
-// Scroll to top
-function scrollToTop () {
+// Scroll-to-top button
+function initScrollToTop () {
   if ($('.scroll-top').length) {
 
-    //Check to see if the window is top if not then display button
+    // Show the button once the page is scrolled past 200px
     $(window).on('scroll', function (){
       if ($(this).scrollTop() > 200) {
         $('.scroll-top').fadeIn();
@@ -25,7 +25,7 @@ function scrollToTop () {
       }
     });
     
-    //Click event to scroll to top
+    // Scroll back to the top on click
     $('.scroll-top').on('click', function() {
       $('html, body').animate({scrollTop : 0},1500);
       return false;
@@ -34,8 +34,8 @@ function scrollToTop () {
 }
 
 
-// Theme-banner Video slider 
-function BannerVideoSlider () {
+// Home banner image slider (Revolution Slider)
+function initBannerSlider () {
   var banner = $("#main-banner-slider.video-slider");
   if (banner.length) {
     banner.revolution({
@@ -89,13 +89,13 @@ function BannerVideoSlider () {
 }
 
 
-//Add OnepageNav / Sidebar
-function onePageFixedNav() {
+// One-page nav: scrollspy on the header menu and smooth scroll on its links
+function initOnePageNav() {
     if($('body').length){
-      // Add scrollspy to 
+      // Highlight the menu item of the section in view
       $('body').scrollspy({target: ".theme-main-header", offset: 70});   
 
-      // Add smooth scrolling on all links inside the one-page-menu
+      // Smooth scroll for every link inside the one-page menu
       $(".one-page-menu li a").on('click', function(event) {
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -106,7 +106,7 @@ function onePageFixedNav() {
           var hash = this.hash;
 
           // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          // The scroll animation lasts 1000 ms
           $('html, body').animate({
             scrollTop: $(hash).offset().top
           }, 1000, function(){
@@ -119,7 +119,7 @@ function onePageFixedNav() {
     }
 }
 
-// Sticky header
+// Sticky header: add .fixed once the page is scrolled past 100px
 function stickyHeader () {
   if ($('.theme-main-header').length) {
     var sticky = $('.theme-main-header'),
@@ -132,8 +132,8 @@ function stickyHeader () {
 }
 
 
-// Tooggle Home page menu click Function 
-function subMenuExpend () {
+// Mobile submenu: add an arrow icon to dropdown items that toggles their submenu
+function initSubMenuToggle () {
   if($(".theme-main-header").length) {
     $('.theme-main-header li.dropdown-holder').append(function () {
       return '<i class="fa fa-angle-down"></i>';
@@ -144,6 +144,7 @@ function subMenuExpend () {
   }
 }
 
+// Close the mobile menu after clicking a menu or submenu link
 $('.navbar-nav>li>a').on('click', function(){
   $('.navbar-collapse').collapse('hide');
 });
@@ -155,10 +156,10 @@ $('.navbar-nav>li>ul>li>a').on('click', function(){
 // DOM ready function
 jQuery(document).on('ready', function() {
 	(function ($) {
-     scrollToTop ();
-     BannerVideoSlider ();
-     onePageFixedNav();
-     subMenuExpend ()
+     initScrollToTop ();
+     initBannerSlider ();
+     initOnePageNav();
+     initSubMenuToggle ()
   })(jQuery);
 });
 
@@ -174,6 +175,6 @@ jQuery(window).on('scroll', function () {
 // Window load function
 jQuery(window).on('load', function () {
    (function ($) {
-      prealoader ()
+      hidePreloader ()
   })(jQuery);
  });

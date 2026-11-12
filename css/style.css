@@ -6,8 +6,8 @@
 /*   03 - Global Settings */
 /*   04 - Theme Header / Sticky Menu */
 /*   05 - Theme Main Banner */
-/*   06 - About section */
-/*   07 - Service section  */
+/*   06 - Team section */
+/*   07 - Classes section  */
 /*   08 - Gallery section  */
 /*   09 - Contact Section  */
 /*   10 - Footer */
@@ -35,41 +35,41 @@
   background: #fff;
   overflow: hidden;
 }
-#preloader_1{
+#preloader{
   position: absolute;
   left: 50%;
   margin-left: -25px;
   top: 50%;
   transform: translateY(-50%);
 }
-#preloader_1 span{
+#preloader span{
   display:block;
   bottom:0px;
   width: 6px;
   height: 5px;
   background:#e04f5d; 
   position:absolute;
-  animation: preloader_1 1.5s  infinite ease-in-out;
+  animation: preloader-bounce 1.5s  infinite ease-in-out;
 }
  
-#preloader_1 span:nth-child(2){
+#preloader span:nth-child(2){
 left:11px;
 animation-delay: .2s;
  
 }
-#preloader_1 span:nth-child(3){
+#preloader span:nth-child(3){
 left:22px;
 animation-delay: .4s;
 }
-#preloader_1 span:nth-child(4){
+#preloader span:nth-child(4){
 left:33px;
 animation-delay: .6s;
 }
-#preloader_1 span:nth-child(5){
+#preloader span:nth-child(5){
 left:44px;
 animation-delay: .8s;
 }
-@keyframes preloader_1 {
+@keyframes preloader-bounce {
     0% {height:5px;transform:translateY(0px);background:#e62d3f;}
     25% {height:30px;transform:translateY(15px);background:#e62d3f;}
     50% {height:5px;transform:translateY(0px);background:#ee2438;}
@@ -142,14 +142,14 @@ animation-delay: .8s;
   content: '';
   clear: both;
  }
-.tran3s,.theme-main-menu .navbar-nav>li a {
+.transition-300,.theme-main-menu .navbar-nav>li a {
   -webkit-transition: all .3s ease-in-out;
      -moz-transition: all .3s ease-in-out;
       -ms-transition: all .3s ease-in-out;
        -o-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
  }
-.tran4s,#service-section .single-service-content p {
+.transition-400,#classes-section .class-card p {
   -webkit-transition: all .4s ease-in-out;
      -moz-transition: all .4s ease-in-out;
       -ms-transition: all .4s ease-in-out;
@@ -187,16 +187,16 @@ animation-delay: .8s;
   margin: 10px auto 0 auto;
 }
 .theme-main-menu .navbar-nav>li.active>a,.theme-main-menu .navbar-nav>li>a:hover,
-#service-section .single-service-content:hover .icon-heading .icon,
-#service-section .single-service-content:hover .icon-heading h6 a,
+#classes-section .class-card:hover .icon-heading .icon,
+#classes-section .class-card:hover .icon-heading h6 a,
 #contact-section .contact-address-content .left-side ul li:hover .icon,
 .theme-main-menu.navbar .nav>li ul li a:hover {
   color:#d73e4d;
 }
-.p-color-bg,.theme-title h2:before {
+.primary-bg,.theme-title h2:before {
   background: #d73e4d;
 }
-#about-us .single-about-content a.more,#service-section .single-service-content:hover,
+#team-section .team-member a.more,#classes-section .class-card:hover,
 #contact-section .contact-address-content .left-side ul li .icon {
   border-color:#d73e4d;
   border-style: solid;
@@ -298,7 +298,7 @@ animation-delay: .8s;
 ====================================================================
 
  ***/
-@keyframes menu_sticky {
+@keyframes sticky-menu-slide-in {
   0%   {margin-top:-120px;opacity: 0;}
   50%  {margin-top: -64px;opacity: 0;}
   100% {margin-top: 0;opacity: 1;}
@@ -311,7 +311,7 @@ animation-delay: .8s;
   z-index: 9999;
   background: rgba(0,0,0,0.5);
   margin:0;
-  animation-name: menu_sticky;
+  animation-name: sticky-menu-slide-in;
   animation-duration: 0.70s;
   animation-timing-function: ease-in-out;
 }
@@ -343,52 +343,52 @@ animation-delay: .8s;
 /*** 
 
 ====================================================================
-  About section
+  Team section
 ====================================================================
 
  ***/
-#about-us .single-about-content {
+#team-section .team-member {
   text-align: center;
   margin-top: 55px;
   margin-bottom: 100px;
 }
-#about-us .team-name {
+#team-section .team-member-name {
   font-size: 22px;
   color:#292929;
   margin: 35px 0 20px 0;
 }
-#about-us .single-about-content a.more {
+#team-section .team-member a.more {
   width: 130px;
   line-height: 45px;
   color:#292929;
   border-width: 1px;
   margin-top:22px;
 }
-#about-us .single-about-content a.more:hover {
+#team-section .team-member a.more:hover {
   color:#fff;
 }
 /*** 
 
 ====================================================================
-  Service section
+  Classes section
 ====================================================================
 
  ***/
-#service-section {
+#classes-section {
   background: #232a34;
   padding-bottom: 80px;
 }
-#service-section .theme-title h2,
-#service-section .theme-title p {
+#classes-section .theme-title h2,
+#classes-section .theme-title p {
   color:#fff;
 }
-#service-section .row {
+#classes-section .row {
   margin: 50px 0 0 0;
 }
-#service-section .row [class*="col-"] {
+#classes-section .row [class*="col-"] {
   padding-top: 25px;
 }
-#service-section .single-service-content {
+#classes-section .class-card {
   border:1px solid #808489;
   text-align: center;
   margin-bottom: 20px;
@@ -398,7 +398,7 @@ animation-delay: .8s;
   padding-left: 23px;
   overflow: hidden;
 }
-#service-section .single-service-content p {
+#classes-section .class-card p {
   -webkit-transition-delay: 0.3s; /* Safari */
   transition-delay: 0.3s;
   opacity: 0;
@@ -408,29 +408,29 @@ animation-delay: .8s;
        -o-transform: translate3D(0,200px,0);
           transform: translate3D(0,200px,0);
 }
-#service-section .single-service-content .icon-heading {
+#classes-section .class-card .icon-heading {
   position: absolute;
   width: 100%;
   left:0;
   right: 0;
   top:120px;
 }
-#service-section .single-service-content .icon-heading .icon {
+#classes-section .class-card .icon-heading .icon {
   font-size: 48px;
   color:#808489;
   width: 80px;
   margin: 0 auto;
   background: #232a34;
 }
-#service-section .single-service-content .icon-heading a {
+#classes-section .class-card .icon-heading a {
   color:#808489;
   text-transform: capitalize;
   margin-top: 10px;
 }
-#service-section .single-service-content:hover .icon-heading {
+#classes-section .class-card:hover .icon-heading {
   top:-10px;
 }
-#service-section .single-service-content:hover p {
+#classes-section .class-card:hover p {
   opacity: 1;
   color: #fff;
   -webkit-transform: translate3D(0,0,0);
@@ -549,14 +549,14 @@ footer p {
   margin-top: 50px;
 }
 
- /* Style the tab */
+ /* Class schedule tabs */
  .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
 
-/* Style the buttons that are used to open the tab content */
+/* Tab buttons (open their .tab-panel, see js/tabs.js) */
 .tab button {
   background-color: inherit;
   float: left;
@@ -567,60 +567,59 @@ footer p {
   transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
+/* Hovered tab button */
 .tab button:hover {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+/* Selected tab button */
 .tab button.active {
   background-color: #ccc;
 }
 
-/* Style the tab content */
-.tabcontent {
+/* Tab panels: hidden until their button is clicked */
+.tab-panel {
   display: none;
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  animation: fade-in 1s; /* 1s fade in when a panel opens */
 } 
 
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
+@keyframes fade-in {
   from {opacity: 0;}
   to {opacity: 1;}
 }
 
-.pad_top_60 {
+.padding-top-60 {
   padding-top: 60px;
 }
 
 /* ----------------
-  DANZAS SECTION 
+  Dance section
 ---------------------*/
 
-#danzas-section .row:after {
+#dance-section .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* ----------------
-  COMEDIA MUSICAL SECTION 
+  Musical theater section
 ---------------------*/
 
-#comediamusical-section .row:after {
+#musical-theater-section .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* ----------------
-  TEATRO SECTION 
+  Theater section
 ---------------------*/
 
-#teatro-section .row:after {
+#theater-section .row:after {
   content: "";
   display: table;
   clear: both;
@@ -645,20 +644,20 @@ footer p {
   transform: translateY(4px);
 }
 
-/** EXTRAS **/
-.pad_top_25 {
+/** Spacing helpers **/
+.padding-top-25 {
   padding-top: 25px;
 }
 
-.pad_top_8 {
+.padding-top-8 {
   padding-top: 8px;
 }
 
-.pad_btm_20 {
+.padding-bottom-20 {
   padding-bottom: 20px;
 }
 
-.pad_btm_78 {
+.padding-bottom-78 {
   padding-bottom: 78px;
 }
 
