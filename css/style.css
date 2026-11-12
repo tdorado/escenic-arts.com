@@ -388,6 +388,23 @@ animation-delay: .8s;
 #classes-section .row [class*="col-"] {
   padding-top: 25px;
 }
+@media (min-width: 768px) {
+  /* Equal-height cards: stretch every column to the tallest one */
+  #classes-section .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #classes-section .row::before,
+  #classes-section .row::after {
+    content: none;
+  }
+  #classes-section .row [class*="col-"] {
+    display: flex;
+  }
+  #classes-section .class-card {
+    flex: 1;
+  }
+}
 #classes-section .class-card {
   border:1px solid #808489;
   text-align: center;
@@ -655,10 +672,6 @@ footer p {
 
 .padding-bottom-20 {
   padding-bottom: 20px;
-}
-
-.padding-bottom-78 {
-  padding-bottom: 78px;
 }
 
 .img-center {
