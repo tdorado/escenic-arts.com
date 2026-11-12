@@ -385,6 +385,15 @@ animation-delay: .8s;
  ***/
 .rev_slider_wrapper {
   background: #000;
+  /* Reserve the slider's height before Revolution runs, so the page doesn't jump.
+     Mirrors js/theme.js (gridwidth [1170,970,770,350], gridheight [850,850,850,700]);
+     Revolution overrides it with an inline height once it initializes. */
+  height: min(850px, calc(100vw * 850 / 770));
+}
+@media (max-width: 750px) {
+  .rev_slider_wrapper {
+    height: min(700px, calc(100vw * 2));
+  }
 }
 .banner h1,.banner h6,.banner .project-button {
   color:#fff;
