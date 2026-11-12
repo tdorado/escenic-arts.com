@@ -36,20 +36,9 @@
 
 
 /**
-* Importing necessary  Styles.
+* Vendor styles (Raleway, bootstrap, font-awesome, revolution, hover)
+* are loaded with <link> tags in index.html, right before this file.
 **/
-
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
-/*----bootstrap css ----- */
-@import url('../vendor/bootstrap/bootstrap.css');
-/*----font awesome -------*/
-@import url('../fonts/font-awesome/css/font-awesome.min.css');
-/*----revolution-slider---*/
-@import url('../vendor/revolution/settings.css');
-@import url('../vendor/revolution/layers.css');
-@import url('../vendor/revolution/navigation.css');
-/*-------- hover css ------*/
-@import url('../vendor/hover.css');
 
 
 /*** 
@@ -174,7 +163,7 @@ animation-delay: .8s;
  ul {list-style-type: none;}
  a {text-decoration: none; display: inline-block;}
  a:hover,a:focus,a:visited {text-decoration: none; outline: none;}
- img {max-width: 100%; display: block;}
+ img {max-width: 100%; height: auto; display: block;}
 
  button {border:none;outline: none;box-shadow: none;display: block; padding: 0;}
  input,textarea {outline: none; box-shadow: none;-webkit-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
